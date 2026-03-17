@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="pickleball_hls" solutionName="solution1" date="2026-03-15T15:56:26.016+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'pb_predict_sitofp_32s_32_4_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="pickleball_hls" solutionName="solution1" date="2026-03-15T16:03:37.412+0800" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'pb_predict_fmul_32ns_32ns_32_4_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="pickleball_hls" solutionName="solution1" date="2026-03-15T16:03:35.425+0800" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'pb_predict_fdiv_32ns_32ns_32_10_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="pickleball_hls" solutionName="solution1" date="2026-03-15T16:03:35.425+0800" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'pb_predict_fcmp_32ns_32ns_1_2_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="pickleball_hls" solutionName="solution1" date="2026-03-15T16:03:35.409+0800" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'pb_predict_faddfsub_32ns_32ns_32_5_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="pickleball_hls" solutionName="solution1" date="2026-03-15T16:03:35.409+0800" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'pb_predict_fadd_32ns_32ns_32_5_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="pickleball_hls" solutionName="solution1" date="2026-03-15T16:03:35.409+0800" type="Warning"/>
+      </packageLog>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,1475 @@
+{
+  "Top": "pb_predict",
+  "RtlTop": "pb_predict",
+  "RtlPrefix": "",
+  "RtlSubPrefix": "pb_predict_",
+  "SourceLanguage": "cpp",
+  "HostMachineBits": "64",
+  "FunctionProtocol": "ap_ctrl_hs",
+  "ResetStyle": "control",
+  "Target": {
+    "Family": "zynquplus",
+    "Device": "xczu3eg",
+    "Package": "-sbva484",
+    "Speed": "-1-e",
+    "Triple": "fpga64-xilinx-none"
+  },
+  "Args": {
+    "input_stream": {
+      "index": "0",
+      "direction": "in",
+      "srcType": "stream<hls::axis<ap_int<32>, 0, 0, 0>, 0>&",
+      "srcSize": "96",
+      "hwRefs": [{
+          "type": "interface",
+          "interface": "input_stream",
+          "name": "",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "output_stream": {
+      "index": "1",
+      "direction": "out",
+      "srcType": "stream<hls::axis<ap_int<32>, 0, 0, 0>, 0>&",
+      "srcSize": "96",
+      "hwRefs": [{
+          "type": "interface",
+          "interface": "output_stream",
+          "name": "",
+          "usage": "data",
+          "direction": "out"
+        }]
+    }
+  },
+  "HlsSolution": {
+    "FlowTarget": "vivado",
+    "ConfigTcl": [
+      "config_interface -m_axi_latency=0",
+      "config_export -description {PickleballNet MTL MLP - 3x512 ReLU6 BN-fused}",
+      "config_export -display_name=PickleballNet",
+      "config_export -format=ip_catalog",
+      "config_export -rtl=verilog",
+      "config_export -vendor=cg4002",
+      "config_export -version=3.0",
+      "config_export -vivado_clock=10"
+    ],
+    "DirectiveTcl": ["set_directive_top -name pb_predict \"pb_predict\""],
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "KernelName": "pb_predict"
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "10",
+    "Uncertainty": "2.7",
+    "IsCombinational": "0",
+    "II": "240228",
+    "Latency": "240227"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "cg4002",
+    "Library": "hls",
+    "Name": "pb_predict",
+    "Version": "3.0",
+    "DisplayName": "PickleballNet",
+    "Revision": "2114522283",
+    "Description": "PickleballNet MTL MLP - 3x512 ReLU6 BN-fused",
+    "Taxonomy": "\/VITIS_HLS_IP",
+    "AutoFamilySupport": "",
+    "ZipFile": "cg4002_hls_pb_predict_3_0.zip"
+  },
+  "Files": {
+    "CSource": ["..\/..\/pickleball_model.cpp"],
+    "Vhdl": [
+      "impl\/vhdl\/pb_predict_cls_head_0_bias_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_cls_head_1_bias_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_control_s_axi.vhd",
+      "impl\/vhdl\/pb_predict_fadd_32ns_32ns_32_5_full_dsp_1.vhd",
+      "impl\/vhdl\/pb_predict_faddfsub_32ns_32ns_32_5_full_dsp_1.vhd",
+      "impl\/vhdl\/pb_predict_fcmp_32ns_32ns_1_2_no_dsp_1.vhd",
+      "impl\/vhdl\/pb_predict_fdiv_32ns_32ns_32_10_no_dsp_1.vhd",
+      "impl\/vhdl\/pb_predict_flow_control_loop_pipe_sequential_init.vhd",
+      "impl\/vhdl\/pb_predict_fmul_32ns_32ns_32_4_max_dsp_1.vhd",
+      "impl\/vhdl\/pb_predict_h_a_RAM_AUTO_1R1W.vhd",
+      "impl\/vhdl\/pb_predict_head_buf_RAM_AUTO_1R1W.vhd",
+      "impl\/vhdl\/pb_predict_mux_63_32_1_1.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_0_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_1_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_2_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_3_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_4_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_5_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_6_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_7_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_8_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_9_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_10_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_11_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_12_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_13_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_14_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_15_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_0_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_1_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_2_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_3_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_4_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_5_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_6_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_7_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_8_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_9_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_10_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_11_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_12_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_13_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_14_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_15_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_0_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_1_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_2_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_3_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_4_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_5_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_6_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_7_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_8_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_9_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_10_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_11_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_12_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_13_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_14_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_15_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_LAYER0.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_0_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_1_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_2_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_3_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_4_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_5_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_LAYER0_trunk_0_bias_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_READ_INPUT.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_0_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_1_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_2_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_3_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_4_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_5_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_6_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_7_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_8_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_9_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_10_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_11_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_12_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_13_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_14_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_15_ROM_2P_BRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_0_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_1_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_2_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_3_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_4_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_5_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_6_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_7_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_8_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_9_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_10_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_11_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_12_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_13_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_14_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_15_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_SCALE_INPUT.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_SCALE_INPUT_x_scaler_mean_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_SCALE_INPUT_x_scaler_scale_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_WRITE_CLS.vhd",
+      "impl\/vhdl\/pb_predict_pb_predict_Pipeline_WRITE_REG.vhd",
+      "impl\/vhdl\/pb_predict_reg_head_0_bias_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_reg_head_1_bias_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_regslice_both.vhd",
+      "impl\/vhdl\/pb_predict_sitofp_32s_32_4_no_dsp_1.vhd",
+      "impl\/vhdl\/pb_predict_trunk_1_bias_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_y_scaler_mean_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict_y_scaler_scale_ROM_1P_LUTRAM_1R.vhd",
+      "impl\/vhdl\/pb_predict.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/pb_predict_cls_head_0_bias_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_cls_head_0_bias_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_cls_head_1_bias_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_cls_head_1_bias_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_control_s_axi.v",
+      "impl\/verilog\/pb_predict_fadd_32ns_32ns_32_5_full_dsp_1.v",
+      "impl\/verilog\/pb_predict_faddfsub_32ns_32ns_32_5_full_dsp_1.v",
+      "impl\/verilog\/pb_predict_fcmp_32ns_32ns_1_2_no_dsp_1.v",
+      "impl\/verilog\/pb_predict_fdiv_32ns_32ns_32_10_no_dsp_1.v",
+      "impl\/verilog\/pb_predict_flow_control_loop_pipe_sequential_init.v",
+      "impl\/verilog\/pb_predict_fmul_32ns_32ns_32_4_max_dsp_1.v",
+      "impl\/verilog\/pb_predict_h_a_RAM_AUTO_1R1W.v",
+      "impl\/verilog\/pb_predict_head_buf_RAM_AUTO_1R1W.v",
+      "impl\/verilog\/pb_predict_hls_deadlock_idx0_monitor.v",
+      "impl\/verilog\/pb_predict_hls_deadlock_kernel_monitor_top.vh",
+      "impl\/verilog\/pb_predict_mux_63_32_1_1.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_0_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_0_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_1_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_1_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_2_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_2_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_3_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_3_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_4_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_4_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_5_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_5_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_6_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_6_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_7_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_7_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_8_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_8_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_9_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_9_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_10_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_10_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_11_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_11_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_12_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_12_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_13_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_13_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_14_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_14_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_15_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H0_MAC_p_ZL19cls_head_0_weight_q_15_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_0_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_0_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_1_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_1_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_2_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_2_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_3_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_3_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_4_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_4_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_5_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_5_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_6_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_6_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_7_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_7_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_8_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_8_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_9_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_9_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_10_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_10_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_11_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_11_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_12_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_12_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_13_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_13_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_14_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_14_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_15_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_CLS_H1_MAC_p_ZL19cls_head_1_weight_q_15_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_0_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_0_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_1_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_1_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_2_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_2_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_3_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_3_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_4_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_4_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_5_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_5_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_6_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_6_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_7_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_7_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_8_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_8_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_9_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_9_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_10_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_10_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_11_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_11_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_12_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_12_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_13_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_13_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_14_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_14_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_15_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_L1_MAC_p_ZL16trunk_1_weight_q_15_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_0_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_0_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_1_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_1_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_2_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_2_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_3_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_3_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_4_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_4_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_5_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_p_ZL16trunk_0_weight_q_5_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_trunk_0_bias_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_LAYER0_trunk_0_bias_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_READ_INPUT.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_0_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_0_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_1_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_1_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_2_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_2_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_3_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_3_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_4_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_4_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_5_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_5_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_6_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_6_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_7_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_7_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_8_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_8_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_9_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_9_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_10_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_10_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_11_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_11_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_12_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_12_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_13_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_13_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_14_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_14_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_15_ROM_2P_BRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H0_MAC_p_ZL19reg_head_0_weight_q_15_ROM_2P_BRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_0_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_0_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_1_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_1_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_2_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_2_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_3_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_3_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_4_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_4_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_5_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_5_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_6_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_6_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_7_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_7_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_8_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_8_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_9_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_9_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_10_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_10_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_11_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_11_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_12_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_12_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_13_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_13_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_14_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_14_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_15_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_REG_H1_MAC_p_ZL19reg_head_1_weight_q_15_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_SCALE_INPUT.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_SCALE_INPUT_x_scaler_mean_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_SCALE_INPUT_x_scaler_mean_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_SCALE_INPUT_x_scaler_scale_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_SCALE_INPUT_x_scaler_scale_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_WRITE_CLS.v",
+      "impl\/verilog\/pb_predict_pb_predict_Pipeline_WRITE_REG.v",
+      "impl\/verilog\/pb_predict_reg_head_0_bias_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_reg_head_0_bias_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_reg_head_1_bias_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_reg_head_1_bias_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_regslice_both.v",
+      "impl\/verilog\/pb_predict_sitofp_32s_32_4_no_dsp_1.v",
+      "impl\/verilog\/pb_predict_trunk_1_bias_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_trunk_1_bias_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_y_scaler_mean_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_y_scaler_mean_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict_y_scaler_scale_ROM_1P_LUTRAM_1R.dat",
+      "impl\/verilog\/pb_predict_y_scaler_scale_ROM_1P_LUTRAM_1R.v",
+      "impl\/verilog\/pb_predict.v"
+    ],
+    "SwDriver": [
+      "impl\/misc\/drivers\/pb_predict_v3_0\/data\/pb_predict.mdd",
+      "impl\/misc\/drivers\/pb_predict_v3_0\/data\/pb_predict.tcl",
+      "impl\/misc\/drivers\/pb_predict_v3_0\/src\/Makefile",
+      "impl\/misc\/drivers\/pb_predict_v3_0\/src\/xpb_predict.c",
+      "impl\/misc\/drivers\/pb_predict_v3_0\/src\/xpb_predict.h",
+      "impl\/misc\/drivers\/pb_predict_v3_0\/src\/xpb_predict_hw.h",
+      "impl\/misc\/drivers\/pb_predict_v3_0\/src\/xpb_predict_linux.c",
+      "impl\/misc\/drivers\/pb_predict_v3_0\/src\/xpb_predict_sinit.c"
+    ],
+    "IpMisc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/pb_predict_fadd_32ns_32ns_32_5_full_dsp_1_ip.tcl",
+      "impl\/misc\/pb_predict_faddfsub_32ns_32ns_32_5_full_dsp_1_ip.tcl",
+      "impl\/misc\/pb_predict_fcmp_32ns_32ns_1_2_no_dsp_1_ip.tcl",
+      "impl\/misc\/pb_predict_fdiv_32ns_32ns_32_10_no_dsp_1_ip.tcl",
+      "impl\/misc\/pb_predict_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl",
+      "impl\/misc\/pb_predict_sitofp_32s_32_4_no_dsp_1_ip.tcl"
+    ],
+    "CsynthXml": "syn\/report\/csynth.xml",
+    "DebugDir": ".debug",
+    "KernelXml": ".autopilot\/db\/kernel.internal.xml",
+    "Xo": "",
+    "XoHlsDir": "",
+    "ProtoInst": [
+      ".debug\/pb_predict.protoinst",
+      ".debug\/pickleball_predict.protoinst"
+    ]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "Ip": [
+      {
+        "Name": "pb_predict_fadd_32ns_32ns_32_5_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name pb_predict_fadd_32ns_32ns_32_5_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "pb_predict_faddfsub_32ns_32ns_32_5_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name pb_predict_faddfsub_32ns_32ns_32_5_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "pb_predict_fcmp_32ns_32ns_1_2_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 1 CONFIG.c_result_fraction_width 0 CONFIG.component_name pb_predict_fcmp_32ns_32ns_1_2_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Compare CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "pb_predict_fdiv_32ns_32ns_32_10_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 8 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name pb_predict_fdiv_32ns_32ns_32_10_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Divide CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "pb_predict_fmul_32ns_32ns_32_4_max_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name pb_predict_fmul_32ns_32ns_32_4_max_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "pb_predict_sitofp_32s_32_4_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Custom CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 32 CONFIG.c_a_fraction_width 0 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name pb_predict_sitofp_32s_32_4_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Fixed_to_Float CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      }
+    ]
+  },
+  "Interfaces": {
+    "s_axi_control": {
+      "type": "axi4lite",
+      "busTypeName": "aximm",
+      "mode": "slave",
+      "dataWidth": "32",
+      "addrWidth": "4",
+      "portPrefix": "s_axi_control_",
+      "paramPrefix": "C_S_AXI_CONTROL_",
+      "ports": [
+        "s_axi_control_ARADDR",
+        "s_axi_control_ARREADY",
+        "s_axi_control_ARVALID",
+        "s_axi_control_AWADDR",
+        "s_axi_control_AWREADY",
+        "s_axi_control_AWVALID",
+        "s_axi_control_BREADY",
+        "s_axi_control_BRESP",
+        "s_axi_control_BVALID",
+        "s_axi_control_RDATA",
+        "s_axi_control_RREADY",
+        "s_axi_control_RRESP",
+        "s_axi_control_RVALID",
+        "s_axi_control_WDATA",
+        "s_axi_control_WREADY",
+        "s_axi_control_WSTRB",
+        "s_axi_control_WVALID"
+      ],
+      "registers": [
+        {
+          "offset": "0x00",
+          "name": "CTRL",
+          "access": "RW",
+          "description": "Control signals",
+          "range": "32",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "AP_START",
+              "access": "RW",
+              "description": "Control signal Register for 'ap_start'."
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "AP_DONE",
+              "access": "R",
+              "description": "Control signal Register for 'ap_done'."
+            },
+            {
+              "offset": "2",
+              "width": "1",
+              "name": "AP_IDLE",
+              "access": "R",
+              "description": "Control signal Register for 'ap_idle'."
+            },
+            {
+              "offset": "3",
+              "width": "1",
+              "name": "AP_READY",
+              "access": "R",
+              "description": "Control signal Register for 'ap_ready'."
+            },
+            {
+              "offset": "4",
+              "width": "3",
+              "name": "RESERVED_1",
+              "access": "R",
+              "description": "Reserved.  0s on read."
+            },
+            {
+              "offset": "7",
+              "width": "1",
+              "name": "AUTO_RESTART",
+              "access": "RW",
+              "description": "Control signal Register for 'auto_restart'."
+            },
+            {
+              "offset": "8",
+              "width": "1",
+              "name": "RESERVED_2",
+              "access": "R",
+              "description": "Reserved.  0s on read."
+            },
+            {
+              "offset": "9",
+              "width": "1",
+              "name": "INTERRUPT",
+              "access": "R",
+              "description": "Control signal Register for 'interrupt'."
+            },
+            {
+              "offset": "10",
+              "width": "22",
+              "name": "RESERVED_3",
+              "access": "R",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x04",
+          "name": "GIER",
+          "access": "RW",
+          "description": "Global Interrupt Enable Register",
+          "range": "32",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "Enable",
+              "access": "RW",
+              "description": "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"
+            },
+            {
+              "offset": "1",
+              "width": "31",
+              "name": "RESERVED",
+              "access": "R",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x08",
+          "name": "IP_IER",
+          "access": "RW",
+          "description": "IP Interrupt Enable Register",
+          "range": "32",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "CHAN0_INT_EN",
+              "access": "RW",
+              "description": "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "CHAN1_INT_EN",
+              "access": "RW",
+              "description": "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."
+            },
+            {
+              "offset": "2",
+              "width": "30",
+              "name": "RESERVED_0",
+              "access": "R",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        },
+        {
+          "offset": "0x0c",
+          "name": "IP_ISR",
+          "access": "RW",
+          "description": "IP Interrupt Status Register",
+          "range": "32",
+          "fields": [
+            {
+              "offset": "0",
+              "width": "1",
+              "name": "CHAN0_INT_ST",
+              "access": "R",
+              "description": "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."
+            },
+            {
+              "offset": "1",
+              "width": "1",
+              "name": "CHAN1_INT_ST",
+              "access": "R",
+              "description": "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."
+            },
+            {
+              "offset": "2",
+              "width": "30",
+              "name": "RESERVED_0",
+              "access": "R",
+              "description": "Reserved.  0s on read."
+            }
+          ]
+        }
+      ]
+    },
+    "ap_clk": {
+      "type": "clock",
+      "busTypeName": "clock",
+      "mode": "slave",
+      "busParams": {
+        "ASSOCIATED_BUSIF": "s_axi_control:input_stream:output_stream",
+        "ASSOCIATED_RESET": "ap_rst_n"
+      },
+      "portMap": {"ap_clk": "CLK"},
+      "ports": ["ap_clk"]
+    },
+    "ap_rst_n": {
+      "type": "reset",
+      "busTypeName": "reset",
+      "mode": "slave",
+      "busParams": {"POLARITY": "ACTIVE_LOW"},
+      "portMap": {"ap_rst_n": "RST"},
+      "ports": ["ap_rst_n"]
+    },
+    "interrupt": {
+      "type": "interrupt",
+      "busTypeName": "interrupt",
+      "mode": "master",
+      "dataWidth": "1",
+      "busParams": {"SENSITIVITY": "LEVEL_HIGH"},
+      "portMap": {"interrupt": "INTERRUPT"},
+      "ports": ["interrupt"]
+    },
+    "input_stream": {
+      "type": "axi4stream",
+      "busTypeName": "axis",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portPrefix": "input_stream_",
+      "ports": [
+        "input_stream_TDATA",
+        "input_stream_TKEEP",
+        "input_stream_TLAST",
+        "input_stream_TREADY",
+        "input_stream_TSTRB",
+        "input_stream_TVALID"
+      ],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "axis",
+          "register_option": "0",
+          "register_mode": "both",
+          "argName": "input_stream"
+        }]
+    },
+    "output_stream": {
+      "type": "axi4stream",
+      "busTypeName": "axis",
+      "mode": "master",
+      "dataWidth": "32",
+      "portPrefix": "output_stream_",
+      "ports": [
+        "output_stream_TDATA",
+        "output_stream_TKEEP",
+        "output_stream_TLAST",
+        "output_stream_TREADY",
+        "output_stream_TSTRB",
+        "output_stream_TVALID"
+      ],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "axis",
+          "register_option": "0",
+          "register_mode": "both",
+          "argName": "output_stream"
+        }]
+    }
+  },
+  "RtlPorts": {
+    "s_axi_control_AWVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_control_AWREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_control_AWADDR": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_control_WVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_control_WREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_control_WDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "s_axi_control_WSTRB": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_control_ARVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_control_ARREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_control_ARADDR": {
+      "dir": "in",
+      "width": "4"
+    },
+    "s_axi_control_RVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_control_RREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_control_RDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "s_axi_control_RRESP": {
+      "dir": "out",
+      "width": "2"
+    },
+    "s_axi_control_BVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "s_axi_control_BREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_axi_control_BRESP": {
+      "dir": "out",
+      "width": "2"
+    },
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst_n": {
+      "dir": "in",
+      "width": "1"
+    },
+    "interrupt": {
+      "dir": "out",
+      "width": "1"
+    },
+    "input_stream_TDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "input_stream_TVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "input_stream_TREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "input_stream_TLAST": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "input_stream_TKEEP": {
+      "dir": "in",
+      "width": "4"
+    },
+    "input_stream_TSTRB": {
+      "dir": "in",
+      "width": "4"
+    },
+    "output_stream_TDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "output_stream_TVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "output_stream_TREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "output_stream_TLAST": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "output_stream_TKEEP": {
+      "dir": "out",
+      "width": "4"
+    },
+    "output_stream_TSTRB": {
+      "dir": "out",
+      "width": "4"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {
+      "ModuleName": "pb_predict",
+      "Instances": [
+        {
+          "ModuleName": "pb_predict_Pipeline_READ_INPUT",
+          "InstanceName": "grp_pb_predict_Pipeline_READ_INPUT_fu_1593"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_SCALE_INPUT",
+          "InstanceName": "grp_pb_predict_Pipeline_SCALE_INPUT_fu_1611"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_LAYER0",
+          "InstanceName": "grp_pb_predict_Pipeline_LAYER0_fu_1631"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_L1_MAC",
+          "InstanceName": "grp_pb_predict_Pipeline_L1_MAC_fu_1671"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_REG_H0_MAC",
+          "InstanceName": "grp_pb_predict_Pipeline_REG_H0_MAC_fu_1740"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_REG_H1_MAC",
+          "InstanceName": "grp_pb_predict_Pipeline_REG_H1_MAC_fu_1809"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_CLS_H0_MAC",
+          "InstanceName": "grp_pb_predict_Pipeline_CLS_H0_MAC_fu_1878"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_CLS_H1_MAC",
+          "InstanceName": "grp_pb_predict_Pipeline_CLS_H1_MAC_fu_1947"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_WRITE_REG",
+          "InstanceName": "grp_pb_predict_Pipeline_WRITE_REG_fu_2016"
+        },
+        {
+          "ModuleName": "pb_predict_Pipeline_WRITE_CLS",
+          "InstanceName": "grp_pb_predict_Pipeline_WRITE_CLS_fu_2034"
+        }
+      ]
+    },
+    "Info": {
+      "pb_predict_Pipeline_READ_INPUT": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_SCALE_INPUT": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_LAYER0": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_L1_MAC": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_REG_H0_MAC": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_REG_H1_MAC": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_CLS_H0_MAC": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_CLS_H1_MAC": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_WRITE_REG": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict_Pipeline_WRITE_CLS": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "pb_predict": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      }
+    },
+    "Metrics": {
+      "pb_predict_Pipeline_READ_INPUT": {
+        "Latency": {
+          "LatencyBest": "8",
+          "LatencyAvg": "8",
+          "LatencyWorst": "8",
+          "PipelineII": "8",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "1.236"
+        },
+        "Loops": [{
+            "Name": "READ_INPUT",
+            "TripCount": "6",
+            "Latency": "6",
+            "PipelineII": "1",
+            "PipelineDepth": "1"
+          }],
+        "Area": {
+          "FF": "197",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "~0",
+          "LUT": "58",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_SCALE_INPUT": {
+        "Latency": {
+          "LatencyBest": "22",
+          "LatencyAvg": "22",
+          "LatencyWorst": "22",
+          "PipelineII": "22",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.808"
+        },
+        "Loops": [{
+            "Name": "SCALE_INPUT",
+            "TripCount": "6",
+            "Latency": "20",
+            "PipelineII": "1",
+            "PipelineDepth": "16"
+          }],
+        "Area": {
+          "FF": "550",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "~0",
+          "LUT": "189",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_LAYER0": {
+        "Latency": {
+          "LatencyBest": "563",
+          "LatencyAvg": "563",
+          "LatencyWorst": "563",
+          "PipelineII": "563",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.675"
+        },
+        "Loops": [{
+            "Name": "LAYER0",
+            "TripCount": "512",
+            "Latency": "561",
+            "PipelineII": "1",
+            "PipelineDepth": "51"
+          }],
+        "Area": {
+          "DSP": "15",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "4",
+          "FF": "2454",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "1",
+          "LUT": "2069",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "2",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_L1_MAC": {
+        "Latency": {
+          "LatencyBest": "143",
+          "LatencyAvg": "143",
+          "LatencyWorst": "143",
+          "PipelineII": "143",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.675"
+        },
+        "Loops": [{
+            "Name": "L1_MAC",
+            "TripCount": "32",
+            "Latency": "141",
+            "PipelineII": "4",
+            "PipelineDepth": "18"
+          }],
+        "Area": {
+          "BRAM_18K": "128",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "29",
+          "FF": "2146",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "1",
+          "LUT": "966",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "1",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_REG_H0_MAC": {
+        "Latency": {
+          "LatencyBest": "143",
+          "LatencyAvg": "143",
+          "LatencyWorst": "143",
+          "PipelineII": "143",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.675"
+        },
+        "Loops": [{
+            "Name": "REG_H0_MAC",
+            "TripCount": "32",
+            "Latency": "141",
+            "PipelineII": "4",
+            "PipelineDepth": "18"
+          }],
+        "Area": {
+          "BRAM_18K": "64",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "14",
+          "FF": "2146",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "1",
+          "LUT": "966",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "1",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_REG_H1_MAC": {
+        "Latency": {
+          "LatencyBest": "79",
+          "LatencyAvg": "79",
+          "LatencyWorst": "79",
+          "PipelineII": "79",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.675"
+        },
+        "Loops": [{
+            "Name": "REG_H1_MAC",
+            "TripCount": "16",
+            "Latency": "77",
+            "PipelineII": "4",
+            "PipelineDepth": "18"
+          }],
+        "Area": {
+          "FF": "2263",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "1",
+          "LUT": "1153",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "1",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_CLS_H0_MAC": {
+        "Latency": {
+          "LatencyBest": "143",
+          "LatencyAvg": "143",
+          "LatencyWorst": "143",
+          "PipelineII": "143",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.675"
+        },
+        "Loops": [{
+            "Name": "CLS_H0_MAC",
+            "TripCount": "32",
+            "Latency": "141",
+            "PipelineII": "4",
+            "PipelineDepth": "18"
+          }],
+        "Area": {
+          "BRAM_18K": "64",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "14",
+          "FF": "2139",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "1",
+          "LUT": "966",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "1",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_CLS_H1_MAC": {
+        "Latency": {
+          "LatencyBest": "79",
+          "LatencyAvg": "79",
+          "LatencyWorst": "79",
+          "PipelineII": "79",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "6.675"
+        },
+        "Loops": [{
+            "Name": "CLS_H1_MAC",
+            "TripCount": "16",
+            "Latency": "77",
+            "PipelineII": "4",
+            "PipelineDepth": "18"
+          }],
+        "Area": {
+          "FF": "2261",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "1",
+          "LUT": "1152",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "1",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_WRITE_REG": {
+        "Latency": {
+          "LatencyBest": "8",
+          "LatencyAvg": "8",
+          "LatencyWorst": "8",
+          "PipelineII": "8",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "1.236"
+        },
+        "Loops": [{
+            "Name": "WRITE_REG",
+            "TripCount": "6",
+            "Latency": "6",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          }],
+        "Area": {
+          "FF": "38",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "~0",
+          "LUT": "98",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict_Pipeline_WRITE_CLS": {
+        "Latency": {
+          "LatencyBest": "8",
+          "LatencyAvg": "8",
+          "LatencyWorst": "8",
+          "PipelineII": "8",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "1.236"
+        },
+        "Loops": [{
+            "Name": "WRITE_CLS",
+            "TripCount": "6",
+            "Latency": "6",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          }],
+        "Area": {
+          "FF": "39",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "~0",
+          "LUT": "106",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "pb_predict": {
+        "Latency": {
+          "LatencyBest": "240227",
+          "LatencyAvg": "240227",
+          "LatencyWorst": "240227",
+          "PipelineII": "240228",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.345"
+        },
+        "Loops": [
+          {
+            "Name": "LAYER1",
+            "TripCount": "512",
+            "Latency": "118784",
+            "PipelineII": "",
+            "PipelineDepth": "232"
+          },
+          {
+            "Name": "REG_HEAD_L0",
+            "TripCount": "256",
+            "Latency": "59392",
+            "PipelineII": "",
+            "PipelineDepth": "232"
+          },
+          {
+            "Name": "REG_HEAD_L1",
+            "TripCount": "6",
+            "Latency": "1044",
+            "PipelineII": "",
+            "PipelineDepth": "174"
+          },
+          {
+            "Name": "CLS_HEAD_L0",
+            "TripCount": "256",
+            "Latency": "59392",
+            "PipelineII": "",
+            "PipelineDepth": "232"
+          },
+          {
+            "Name": "CLS_HEAD_L1",
+            "TripCount": "6",
+            "Latency": "990",
+            "PipelineII": "",
+            "PipelineDepth": "165"
+          }
+        ],
+        "Area": {
+          "BRAM_18K": "288",
+          "AVAIL_BRAM": "432",
+          "UTIL_BRAM": "66",
+          "DSP": "35",
+          "AVAIL_DSP": "360",
+          "UTIL_DSP": "9",
+          "FF": "17602",
+          "AVAIL_FF": "141120",
+          "UTIL_FF": "12",
+          "LUT": "16787",
+          "AVAIL_LUT": "70560",
+          "UTIL_LUT": "23",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      }
+    }
+  },
+  "GenerateBdFiles": "0",
+  "GenData": {
+    "DataVersion": "0.2",
+    "Time": "2026-03-15 16:03:22 +0800",
+    "ToolName": "vitis_hls",
+    "ToolVersion": "2022.1"
+  }
+}
