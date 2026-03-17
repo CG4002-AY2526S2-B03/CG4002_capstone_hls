@@ -1,6 +1,6 @@
 # CG4002 Capstone HLS - PickleballNet
 
-Vitis HLS implementation of the PickleballNet accelerator for the Ultra96-V2 (Zynq UltraScale+ ZU3EG). Part of the CG4002 capstone AI system — the training pipeline and deployment code are maintained in a separate repository:
+Vitis HLS implementation of the PickleballNet accelerator for the Ultra96-V2 (Zynq UltraScale+ ZU3EG). Part of the CG4002 capstone AI system such as the training pipeline and deployment code are maintained in a separate repository:
 https://github.com/CG4002-AY2526S2-B03/CG4002_capstone_AI_Accelerator
 
 ---
@@ -45,8 +45,8 @@ Pickleball_vivado/     - Vivado block design project
 
 ## Pipeline Notes
 
-- **LAYER0** (6->512): outer loop pipelined II=1, inner loop fully unrolled. 6 parallel fmuls + adder tree, no loop-carried dependency.
-- **LAYER1 + heads** (512->512, 512->256): inner loop pipelined II=4 using 16 independent partial accumulators to break false resource conflicts.
+- **LAYER0** (6 -> 512): outer loop pipelined II=1, inner loop fully unrolled. 6 parallel fmuls + adder tree, no loop-carried dependency.
+- **LAYER1 + heads** (512 -> 512, 512 -> 256): inner loop pipelined II=4 using 16 independent partial accumulators to break false resource conflicts.
 
 ---
 
