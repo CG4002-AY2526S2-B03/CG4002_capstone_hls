@@ -13,7 +13,7 @@ PickleballNet is a multi-task neural network that takes a 6D ball state (positio
 
 The trained weights are quantized to INT8, exported as C headers, and synthesized with Vitis HLS into an AXI-Stream IP core integrated via a Vivado block design.
 
-**Architecture:** Shared FC trunk (2 x 512, BatchNorm fused, ReLU6) -> RegHead (512->256->6) + ClsHead (512->256->6)
+**Architecture:** Shared FC trunk (2 x 512, BatchNorm fused, ReLU6) -> RegHead (512 -> 256 -> 6) + ClsHead (512 -> 256 -> 6)
 
 **Interface:** AXI-Stream with 6 x float32 in and 12 x float32 out (6 regression + 6 classification logits)
 
@@ -63,9 +63,9 @@ Pickleball_vivado/     - Vivado block design project
 
 ## Build
 
-**Step 1 — HLS synthesis:** Open `pickleball_hls/hls.app` in Vitis HLS and run C Synthesis + Export RTL.
+**Step 1: HLS synthesis:** Open `pickleball_hls/hls.app` in Vitis HLS and run C Synthesis + Export RTL.
 
-**Step 2 — Vivado implementation:** Open `Pickleball_vivado/Pickleball_vivado.xpr` in Vivado 2022.1, run synthesis, implementation, and generate bitstream.
+**Step 2: Vivado implementation:** Open `Pickleball_vivado/Pickleball_vivado.xpr` in Vivado 2022.1, run synthesis, implementation, and generate bitstream.
 
 The generated `design_1.bit` and `design_1.hwh` are then used by the deployment scripts in the [AI Accelerator repo](https://github.com/CG4002-AY2526S2-B03/CG4002_capstone_AI_Accelerator) (`ultra96_deploy/`).
 
