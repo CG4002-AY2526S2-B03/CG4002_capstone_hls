@@ -1,0 +1,16 @@
+Pickleball_vivado/*.cache/
+Pickleball_vivado/*.gen/
+Pickleball_vivado/*.ip_user_files/
+Pickleball_vivado/*.runs/
+Pickleball_vivado/*.sim/
+Pickleball_vivado/ip_upgrade.log
+Pickleball_vivado/*.srcs/sources_1/bd/design_1/ip/
+Pickleball_vivado/*.srcs/sources_1/bd/design_1/ui/
+Pickleball_vivado/*.srcs/sources_1/imports/
+
+pickleball_hls/solution1/.autopilot/
+pickleball_hls/solution1/csim/build/
+pickleball_hls/solution1/impl/
+pickleball_hls/solution1/syn/
+pickleball_hls/solution1/solution1.log
+vitis_hls.log
