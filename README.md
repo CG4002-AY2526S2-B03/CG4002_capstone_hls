@@ -15,7 +15,7 @@ The trained weights are quantized to INT8, exported as C headers, and synthesize
 
 **Architecture:** Shared FC trunk (2 x 512, BatchNorm fused, ReLU6) -> RegHead (512->256->6) + ClsHead (512->256->6)
 
-**Interface:** AXI-Stream — 6 x float32 in, 12 x float32 out (6 regression + 6 classification logits)
+**Interface:** AXI-Stream with 6 x float32 in and 12 x float32 out (6 regression + 6 classification logits)
 
 ---
 
