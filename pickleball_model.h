@@ -10,9 +10,9 @@
 // AXI-Stream: 6 float32 in, 12 float32 out (6 reg + 6 cls logits)
 //
 // Resource targets (ZU3EG: 70560 LUT / 216 BRAM36K / 360 DSP):
-//   BRAM: ~128 BRAM36K (59%) -- trunk_1 + reg/cls_head_0 weights
+//   BRAM: ~134 BRAM36K (62%) -- trunk_1 + reg/cls_head_0 weights
 //   LUTRAM: small weights + all activation buffers
-//   Pipeline: LAYER0 II=1 (unrolled), LAYER1/heads II=4 (4 accumulators)
+//   Pipeline: LAYER0 II=1 (unrolled), LAYER1/heads II=4 (16 accumulators), heads DATAFLOW parallel
 
 #define IN_DIM        6
 #define HIDDEN        512
