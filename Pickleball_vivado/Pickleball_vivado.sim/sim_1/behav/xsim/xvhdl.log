@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/pickleball_v4/pickleball_v4.ip_user_files/bd/design_1/ip/design_1_axi_dma_0_0/sim/design_1_axi_dma_0_0.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'design_1_axi_dma_0_0'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/pickleball_v4/pickleball_v4.ip_user_files/bd/design_1/ip/design_1_rst_ps8_0_24M_0/sim/design_1_rst_ps8_0_24M_0.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'design_1_rst_ps8_0_24M_0'

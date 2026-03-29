@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="60" Path="C:/Users/NCF/Downloads/CG4002/ultra96_env/hls_src/Pickleball_vivado/Pickleball_vivado.xpr">
+<Project Version="7" Minor="60" Path="C:/Users/NCF/Downloads/CG4002/ultra96_env/CG4002_capstone_hls/Pickleball_vivado/Pickleball_vivado.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="af1aa9ebdf844a3cb9e456185293f86b"/>

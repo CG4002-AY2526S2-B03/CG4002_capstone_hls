@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="pb_predict" xd:componentRef="pb_predict" xd:initiationInterval="240228" xd:clockPeriod="10" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
-  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
-  <xd:arg xd:name="input_stream" xd:originalName="input_stream" xd:direction="in" xd:interfaceRef="input_stream" xd:busTypeRef="axis" xd:dataWidth="32"/>
-  <xd:arg xd:name="output_stream" xd:originalName="output_stream" xd:direction="out" xd:interfaceRef="output_stream" xd:busTypeRef="axis" xd:dataWidth="32"/>
-  <xd:latencyEstimates xd:best-case="240227" xd:worst-case="240227" xd:average-case="240227"/>
-  <xd:resourceEstimates xd:LUT="16787" xd:FF="17602" xd:BRAM="0" xd:DSP="35"/>
-</xd:acceleratorMap>

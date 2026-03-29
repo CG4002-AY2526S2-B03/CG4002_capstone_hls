@@ -3797,7 +3797,7 @@
         }
       },
       "pb_predict_0": {
-        "vlnv": "cg4002:hls:pb_predict:3.0",
+        "vlnv": "cg4002:hls:pb_predict:4.0",
         "xci_name": "design_1_pb_predict_0_1",
         "xci_path": "ip\\design_1_pb_predict_0_1\\design_1_pb_predict_0_1.xci",
         "inst_hier_path": "pb_predict_0"
